@@ -1,9 +1,14 @@
-const http = require('http');
+const express = require('express');
 
-const requestHandler = require('./routes');
+const app = express();
 
-const server = http.createServer(requestHandler);
-
-server.listen(3000, 'localhost', () => {
-    console.log('The server was started.');
+app.use('/add-product', (req, res, next) => {
+    res.send('<h1>In this section we can add product.</h1>');
 });
+
+app.use('/', (req, res, next) => {
+    console.log('Another middleware;');
+    res.send('<h1>Yo, buddy 111.</h1>');
+});
+
+app.listen(3000);
