@@ -1,14 +1,16 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 
-const adminRoutes = require('./routes/admin');
-const shopRoutes = require('./routes/shop');
+const path = require('path');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(adminRoutes);
-app.use(shopRoutes);
+app.get('/users', (req, res, get) => {
+    res.sendFile(path.join(__dirname, 'views', 'users.html'));
+});
+app.get('/', (req, res, next) => {
+    res.sendFile(path.join(__dirname, 'views', 'shop.html'));
+});
 
 app.listen(3000);
