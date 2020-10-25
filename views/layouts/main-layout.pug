@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{pageTitle}
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+    link(rel="stylesheet", href="/css/main.css")
+  body
+    nav.header.blue
+      .nav-wrapper
+        ul#nav-mobile.left.hide-on-med-and-down
+          li(class=(path === '/' ? 'active' : ''))
+            a(href="/") Shop
+          li(class=(path === '/add-product' ? 'active' : ''))
+            a(href="/admin/add-product") Add Product
+
+    main.main
+      block content
