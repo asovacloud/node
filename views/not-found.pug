@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title #{docTitle}
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
-    link(rel="stylesheet", href="/css/main.css")
-  body
-    nav.header.blue
-      .nav-wrapper
-        ul#nav-mobile.left.hide-on-med-and-down
-          li
-            a(href="/") Shop
-          li
-            a(href="/admin/add-product") Add Product
+extends layouts/main-layout.pug
 
-    main.main
-      h1 Not Found Page
-      p
-        a(href="/") ‹ Back to Homepage
+block content
+  h1 Not Found Page
+  p
+    a(href="/") ‹ Back to Homepage
