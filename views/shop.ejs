@@ -1,0 +1,29 @@
+<%- include('includes/head.ejs')  %>
+    <% if (prods.length > 0) { %>
+        <div class="row">
+            <% for (let product of prods) { %>
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://media.istockphoto.com/photos/education-concept-with-book-in-library-picture-id944631208?k=6&m=944631208&s=612x612&w=0&h=5Hx0ksAT5Majaz40Iov6oLO6GaDn2cxySnNTDTH3Qk8=" alt='Book' />
+                        </div>
+                        <div class="card-content overflow-hidden">
+                            <span class="card-title"><%= product.title %> </span>
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                            <h6 class="secondary-content right">$19.99</h6>
+                        </div>
+                        <div class="card-action overflow-hidden">
+                            <a href="#" class="waves-effect waves-light btn red right">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+        <% } else { %>
+            <div class="row">
+                <div class="col s12">
+                    <h4>No products in the list.</h4>
+                </div>
+            </div>
+            <% } %>
+                <%- include('includes/end.ejs')  %>
