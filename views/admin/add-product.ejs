@@ -3,8 +3,20 @@
     <form action="/admin/add-product" method="POST">
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Enter Product..." name="title" id="add-product" type="text" class="validate">
-                <label class="active" for="add-product">Add Product</label>
+                <input placeholder="Enter Title..." name="title" id="title" type="text">
+                <label class="active" for="title">Add Title</label>
+            </div>
+            <div class="input-field col s12">
+                <input placeholder="Enter Image URL..." name="imageUrl" id="imageUrl" type="text">
+                <label class="active" for="imageUrl">Add Image URL</label>
+            </div>
+            <div class="input-field col s12">
+                <input placeholder="Enter Price..." name="price" id="price" type="number" step="0.01">
+                <label class="active" for="price">Add Price</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea name="description" data-length="120" id="description" class="materialize-textarea"></textarea>
+                <label class="active" for="description">Add Description</label>
             </div>
             <div class="col s12">
                 <button type="submit" class="waves-effect waves-light btn red">Add Product</button>
