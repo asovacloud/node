@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <title>
         <%= pageTitle %>
@@ -14,11 +15,49 @@
 <body>
     <nav class="header blue">
         <div class="nav-wrapper">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li class="<% if (path === '/') { %>active<% } %> "><a href="/">Shop</a></li>
-                <li class="<% if (path === '/add-product') { %>active<% } %> "><a href="/admin/add-product">App Product</a></li>
+                <li class="<% if (path === '/') { %>active<% } %> ">
+                    <a href="/">Shop</a>
+                </li>
+                <li class="<% if (path === '/products') { %>active<% } %> ">
+                    <a href="/products">Products</a>
+                </li>
+                <li class="<% if (path === '/cart') { %>active<% } %> ">
+                    <a href="/cart">Cart</a>
+                </li>
+                <li class="<% if (path === '/orders') { %>active<% } %> ">
+                    <a href="/orders">Orders</a>
+                </li>
+                <li class="<% if (path === '/add-product') { %>active<% } %> ">
+                    <a href="/admin/add-product">Add Product</a>
+                </li>
+                <li class="<% if (path === '/admin/products') { %>active<% } %> ">
+                    <a href="/admin/products">Admin Products</a>
+                </li>
             </ul>
         </div>
     </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li class="<% if (path === '/') { %>active<% } %> ">
+            <a href="/">Shop</a>
+        </li>
+        <li class="<% if (path === '/products') { %>active<% } %> ">
+            <a href="/products">Products</a>
+        </li>
+        <li class="<% if (path === '/cart') { %>active<% } %> ">
+            <a href="/cart">Cart</a>
+        </li>
+        <li class="<% if (path === '/orders') { %>active<% } %> ">
+            <a href="/orders">Orders</a>
+        </li>
+        <li class="<% if (path === '/add-product') { %>active<% } %> ">
+            <a href="/admin/add-product">Add Product</a>
+        </li>
+        <li class="<% if (path === '/admin/products') { %>active<% } %> ">
+            <a href="/admin/products">Admin Products</a>
+        </li>
+    </ul>
 
     <main class="main">
