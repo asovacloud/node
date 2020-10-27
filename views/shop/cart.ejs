@@ -1,3 +1,17 @@
 <%- include('../includes/head') %>
-    <h5>This is a cart page.</h5>
-    <%- include('../includes/end') %>
+    <% if (products.length > 0) { %>
+        <div class="row">
+            <div class="col s12 m6">
+                <ul class="collection">
+                    <% products.forEach((p) => { %>
+                        <li class="collection-item">
+                            <%= p.productData.title %> (
+                                <%= p.qty %> )</li>
+                        <% }) %>
+                </ul>
+            </div>
+        </div>
+        <% } else { %>
+            <h4>No Products in Cart!</h4>
+            <% } %>
+                <%- include('../includes/end') %>
