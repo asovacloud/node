@@ -17,9 +17,12 @@
                             </h6>
                         </div>
                         <div class="card-action overflow-hidden">
-                            <form action="/add-to-cart" method="POST">
-                                <button class="waves-effect waves-light btn green right" type="submit">Add to Cart</button>
-                            </form>
+                            <div class="right">
+                                <a href="/products/<%= product.id %> " class="waves-effect waves-light btn blue darken-2 left">Details</a>
+                                <form class="left" action="/add-to-cart" method="POST">
+                                    <button class="waves-effect waves-light btn green" type="submit">Add to Cart</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

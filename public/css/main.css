@@ -11,3 +11,7 @@
 .overflow-hidden {
     overflow: hidden;
 }
+
+.card .card-action form {
+    margin-left: 0.4rem
+}
