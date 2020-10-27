@@ -7,17 +7,17 @@
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
-                        <h3>
+                        <h4>
                             <%= product.title %>
-                        </h3>
+                        </h4>
                         <p>
                             <%= product.description %>
                         </p>
                     </div>
                     <div class="card-action overflow-hidden">
-                        <form action="/add-to-cart" method="POST" class="left">
-                            <button class="waves-effect waves-light btn green right" type="submit">Add to Cart</button>
-                        </form>
+                        <div class="left">
+                            <%- include('../includes/add-to-cart', { product: product }) %>
+                        </div>
                         <h5 style="margin: 0;" class="secondary-content right">$
                             <%= product.price %>
                         </h5>

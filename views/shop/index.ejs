@@ -17,9 +17,9 @@
                             </h6>
                         </div>
                         <div class="card-action overflow-hidden">
-                            <form class="card__button-holder right" action="/add-to-cart" method="POST">
-                                <button class="waves-effect waves-light btn green" type="submit">Add to Cart</button>
-                            </form>
+                            <div class="right">
+                                <%- include('../includes/add-to-cart', {product: product}) %>
+                            </div>
                         </div>
                     </div>
                 </div>
