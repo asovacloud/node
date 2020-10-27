@@ -18,11 +18,14 @@
                 <textarea name="description" data-length="120" id="description" class="materialize-textarea"><% if (editing) { %><%=  product.description  %><% } %></textarea>
                 <label class="active" for="description">Add Description</label>
             </div>
-            <div class="col s12">
-                <button type="submit" class="waves-effect waves-light btn red">
+            <% if (editing) { %>
+                <input type="hidden" name="productId" value="<%= product.id %> ">
+                <% } %>
+                    <div class="col s12">
+                        <button type="submit" class="waves-effect waves-light btn red">
                         <% if (editing) { %>Update Product<% } else { %>Add Product<% } %> 
                 </button>
-            </div>
+                    </div>
         </div>
     </form>
     <%- include('../includes/end')  %>
