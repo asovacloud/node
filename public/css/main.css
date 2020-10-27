@@ -12,6 +12,6 @@
     overflow: hidden;
 }
 
-.card .card-action form {
+.card__button-holder {
     margin-left: 0.4rem
 }
