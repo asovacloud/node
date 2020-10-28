@@ -1,3 +1,25 @@
 <%- include('../includes/head') %>
-    <h5>This is a cart page.</h5>
-    <%- include('../includes/end') %>
+    <% if (products.length > 0) { %>
+        <div class="row">
+            <div class="col s12 m8">
+                <ul class="collection">
+                    <% products.forEach((p) => { %>
+                        <li class="collection-item overflow-hidden">
+                            <form action="/cart-delete-item" method="POST" class="right">
+                                <button class="waves-effect waves-light btn red" type="submit">Delete</button>
+                                <input type="hidden" name="productId" value="<%= p.productData.id %> ">
+                            </form>
+                            <div class="overflow-hidden">
+                                <%= p.productData.title %>
+                                    (
+                                    <%= p.qty %> )
+                            </div>
+                        </li>
+                        <% }) %>
+                </ul>
+            </div>
+        </div>
+        <% } else { %>
+            <h4>No Products in Cart!</h4>
+            <% } %>
+                <%- include('../includes/end') %>

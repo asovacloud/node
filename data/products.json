@@ -1,1 +1,25 @@
-[{"title":"Greenpease","imageUrl":"https://www.incimages.com/uploaded_files/image/1920x1080/getty_883231284_200013331818843182490_335833.jpg","description":"This book about a nature.","price":"7.23","id":1603772962847}]
+[{
+    "title": "Greenpeace",
+    "id": "1603795326524",
+    "imageUrl": "https://www.incimages.com/uploaded_files/image/1920x1080/getty_883231284_200013331818843182490_335833.jpg",
+    "description": "Greenpeace is a non-governmental environmental organization with offices in over 55 countries and an international coordinating body in Amsterdam.",
+    "price": "100.42"
+}, {
+    "title": "Guitar",
+    "id": "1603795388975   ",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71VlIdlPvaL._AC_SX425_.jpg",
+    "description": "Great guitar. With good sound.",
+    "price": "20.22"
+}, {
+    "title": "Fender Guitar",
+    "id": "1603814018668 ",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71nPm%2Bir53L._AC_SL1500_.jpg",
+    "description": "This is a great guitar.",
+    "price": "10.92"
+}, {
+    "title": "Kid Beginner Guitar",
+    "id": "1603814185589",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71kYHZgF9tL._AC_SL1000_.jpg",
+    "description": "A guitar for beginners.",
+    "price": "100.42"
+}]

@@ -1,0 +1,29 @@
+<%- include('../includes/head') %>
+    <div class="row">
+        <div class="col s12">
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="<%= product.imageUrl %>" alt="<%= product.title %> " />
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h4>
+                            <%= product.title %>
+                        </h4>
+                        <p>
+                            <%= product.description %>
+                        </p>
+                    </div>
+                    <div class="card-action overflow-hidden">
+                        <div class="left">
+                            <%- include('../includes/add-to-cart', { product: product }) %>
+                        </div>
+                        <h5 style="margin: 0;" class="secondary-content right">$
+                            <%= product.price %>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../includes/end') %>
