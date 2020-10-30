@@ -1,7 +1,7 @@
 <%- include('../includes/head') %>
     <% if (products.length > 0) { %>
         <div class="row">
-            <div class="col s12 m8">
+            <div class="col s12">
                 <ul class="collection">
                     <% products.forEach((p) => { %>
                         <li class="collection-item overflow-hidden">
@@ -17,6 +17,12 @@
                         </li>
                         <% }) %>
                 </ul>
+                <hr>
+                <div class="centered">
+                    <form action="/create-order" method="POST">
+                        <button type="submit" class="waves-effect waves-light btn darken-3 amber">Order Now!</button>
+                    </form>
+                </div>
             </div>
         </div>
         <% } else { %>
