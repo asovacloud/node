@@ -1,3 +1,22 @@
 <%- include('../includes/head') %>
-    <h4>Nothing there.</h4>
-    <%- include('../includes/end') %>
+    <% if (orders.length <= 0) { %>
+        <h4>Nothing there.</h4>
+        <% } else { %>
+            <ul>
+                <% orders.forEach(order => { %>
+                    <li>
+                        <h5>#
+                            <%= order.id %>
+                        </h5>
+                        <ul>
+                            <% order.products.forEach(product => { %>
+                                <li>
+                                    <%= product.title %> (
+                                        <%= product.orderItem.quantity %>)</li>
+                                <% }) %>
+                        </ul>
+                    </li>
+                    <% }) %>
+            </ul>
+            <% } %>
+                <%- include('../includes/end') %>
