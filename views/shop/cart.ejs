@@ -1,22 +1,28 @@
 <%- include('../includes/head') %>
     <% if (products.length > 0) { %>
         <div class="row">
-            <div class="col s12 m8">
+            <div class="col s12">
                 <ul class="collection">
                     <% products.forEach((p) => { %>
                         <li class="collection-item overflow-hidden">
                             <form action="/cart-delete-item" method="POST" class="right">
                                 <button class="waves-effect waves-light btn red" type="submit">Delete</button>
-                                <input type="hidden" name="productId" value="<%= p.productData.id %> ">
+                                <input type="hidden" name="productId" value="<%= p.id %> ">
                             </form>
                             <div class="overflow-hidden">
-                                <%= p.productData.title %>
+                                <%= p.title %>
                                     (
-                                    <%= p.qty %> )
+                                    <%= p.cartItem.quantity %> )
                             </div>
                         </li>
                         <% }) %>
                 </ul>
+                <hr>
+                <div class="centered">
+                    <form action="/create-order" method="POST">
+                        <button type="submit" class="waves-effect waves-light btn darken-3 amber">Order Now!</button>
+                    </form>
+                </div>
             </div>
         </div>
         <% } else { %>
