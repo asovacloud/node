@@ -70,20 +70,19 @@ exports.getEditProduct = (req, res, next) => {
 //         .catch(err => console.log(err));
 // };
 
-// exports.getProducts = (req, res, next) => {
-//     req.user
-//         .getProducts()
-//         .then(prods => {
-//             res.render(
-//                 'admin/products', {
-//                     prods,
-//                     pageTitle: 'Admin Products',
-//                     path: '/admin/products'
-//                 }
-//             );
-//         })
-//         .catch(err => console.log(err));
-// };
+exports.getProducts = (req, res, next) => {
+    Product.fetchAll()
+        .then(prods => {
+            res.render(
+                'admin/products', {
+                    prods,
+                    pageTitle: 'Admin Products',
+                    path: '/admin/products'
+                }
+            );
+        })
+        .catch(err => console.log(err));
+};
 
 // exports.postDeleteProduct = (req, res, next) => {
 //     const prodId = req.body.productId;
