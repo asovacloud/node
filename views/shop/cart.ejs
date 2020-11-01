@@ -7,7 +7,7 @@
                         <li class="collection-item overflow-hidden">
                             <form action="/cart-delete-item" method="POST" class="right">
                                 <button class="waves-effect waves-light btn red" type="submit">Delete</button>
-                                <input type="hidden" name="productId" value="<%= p.id %> ">
+                                <input type="hidden" name="productId" value="<%= p._id %> ">
                             </form>
                             <div class="overflow-hidden">
                                 <%= p.title %>
