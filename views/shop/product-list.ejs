@@ -5,7 +5,7 @@
                 <div class="col s12 m4">
                     <div class="card">
                         <div class="card-image">
-                            <img src="<%= product.imageUrl %>" alt="<%= product.title %> " />
+                            <img src="<%= product.imageUrl %>" alt="<%= product.title %>" />
                         </div>
                         <div class="card-content overflow-hidden">
                             <span class="card-title"><%= product.title %> </span>
@@ -18,7 +18,7 @@
                         </div>
                         <div class="card-action overflow-hidden">
                             <div class="right">
-                                <a href="/products/<%= product._id %> " class="waves-effect waves-light btn blue darken-2 left">Details</a>
+                                <a href="/products/<%= product._id %>" class="waves-effect waves-light btn blue darken-2 left">Details</a>
                                 <div class="left card__button-holder">
                                     <%- include('../includes/add-to-cart', {product: product}) %>
                                 </div>
