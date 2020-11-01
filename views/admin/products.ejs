@@ -18,14 +18,14 @@
                         </div>
                         <div class="card-action overflow-hidden">
                             <div class="right">
-                                <a href="/admin/edit-product/<%= product.id  %>?edit=true" class="waves-effect waves-light btn blue darken-2 left">
+                                <a href="/admin/edit-product/<%= product._id  %>?edit=true" class="waves-effect waves-light btn blue darken-2 left">
                                     Edit
                                 </a>
                                 <form class="left card__button-holder" action="/admin/delete-product" method="POST">
                                     <button class="waves-effect waves-light btn red" type="submit">
                                         Delete
                                     </button>
-                                    <input type="hidden" name="productId" value="<%= product.id %> ">
+                                    <input type="hidden" name="productId" value="<%= product._id %> ">
                                 </form>
                             </div>
 
