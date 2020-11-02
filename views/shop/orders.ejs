@@ -4,19 +4,16 @@
         <% } else { %>
             <ul class="collection with-header">
                 <% orders.forEach(order => { %>
-                    <li class="collection-header">
-                        <h4>Order - #
+                    <li class="collection-header active blue white-text">
+                        <h6>Order - #
                             <%= order._id %>
-                        </h4>
+                        </h6>
                     </li>
                     <% order.items.forEach(product => { %>
                         <li class="collection-item">
                             <%= product.title %> (
                                 <%= product.quantity %>)</li>
                         <% }) %>
-                            <li class="collection-item active blue">
-                                <hr style="opacity: 0">
-                            </li>
                             <% }) %>
             </ul>
             <% } %>
