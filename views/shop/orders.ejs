@@ -2,21 +2,22 @@
     <% if (orders.length <= 0) { %>
         <h4>Nothing there.</h4>
         <% } else { %>
-            <ul>
+            <ul class="collection with-header">
                 <% orders.forEach(order => { %>
-                    <li>
-                        <h5>#
+                    <li class="collection-header">
+                        <h4>Order - #
                             <%= order._id %>
-                        </h5>
-                        <ul>
-                            <% order.products.forEach(product => { %>
-                                <li>
-                                    <%= product.title %> (
-                                        <%= product.orderItem.quantity %>)</li>
-                                <% }) %>
-                        </ul>
+                        </h4>
                     </li>
-                    <% }) %>
+                    <% order.items.forEach(product => { %>
+                        <li class="collection-item">
+                            <%= product.title %> (
+                                <%= product.quantity %>)</li>
+                        <% }) %>
+                            <li class="collection-item active blue">
+                                <hr style="opacity: 0">
+                            </li>
+                            <% }) %>
             </ul>
             <% } %>
                 <%- include('../includes/end') %>
