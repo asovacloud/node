@@ -40,11 +40,12 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getCart = (req, res, next) => {
-    req.user.getCart()
+    req.user
+        .getCart()
         .then(products => {
             res.render('shop/cart', {
-                pageTitle: 'Your Cart',
                 path: '/cart',
+                pageTitle: 'Your Cart',
                 products
             });
         })
