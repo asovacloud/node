@@ -4,7 +4,6 @@ const Order = require('../models/order');
 exports.getProducts = (req, res, next) => {
     Product.find()
         .then(prods => {
-            console.log('Products: ', prods);
             res.render('shop/product-list', {
                 prods,
                 pageTitle: 'All Products',

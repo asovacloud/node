@@ -79,7 +79,6 @@ exports.postEditProduct = (req, res, next) => {
 exports.getProducts = (req, res, next) => {
     Product.find()
         .then(prods => {
-            console.log('Products: ', prods);
             res.render(
                 'admin/products', {
                     prods,
