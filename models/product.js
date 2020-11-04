@@ -21,7 +21,7 @@ const productSchema = new Schema({
     },
     userId: {
         type: Schema.Types.ObjectId,
-        red: 'User',
+        ref: 'User',
         required: true
     }
 });
