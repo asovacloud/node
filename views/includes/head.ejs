@@ -23,13 +23,13 @@
                 <li class="<% if (path === '/products') { %>active<% } %>">
                     <a href="/products">Products</a>
                 </li>
-                <li class="<% if (path === '/cart') { %>active<% } %>">
-                    <a href="/cart">Cart</a>
-                </li>
-                <li class="<% if (path === '/orders') { %>active<% } %>">
-                    <a href="/orders">Orders</a>
-                </li>
                 <% if (isAuthenticated) { %>
+                    <li class="<% if (path === '/cart') { %>active<% } %>">
+                        <a href="/cart">Cart</a>
+                    </li>
+                    <li class="<% if (path === '/orders') { %>active<% } %>">
+                        <a href="/orders">Orders</a>
+                    </li>
                     <li class="<% if (path === '/add-product') { %>active<% } %>">
                         <a href="/admin/add-product">Add Product</a>
                     </li>
@@ -38,16 +38,22 @@
                     </li>
                     <% } %>
             </ul>
+
+
             <ul id="nav-mobile-right" class="right hide-on-med-and-down">
-                <li class="<% if (path === '/login') { %>active<% } %>">
-                    <a class="btn green" href="/login">Login</a>
-                </li>
-                <li style="padding-right: .8rem;">
-                    <form action="/logout" method="POST">
-                        <button class="btn red" type="submit">Logout</button>
-                    </form>
-                </li>
+                <% if (!isAuthenticated) { %>
+                    <li class="<% if (path === '/login') { %>active<% } %>">
+                        <a class="btn green" href="/login">Login</a>
+                    </li>
+                    <% } else { %>
+                        <li style="padding-right: .8rem;">
+                            <form action="/logout" method="POST">
+                                <button class="btn red" type="submit">Logout</button>
+                            </form>
+                        </li>
+                        <% } %>
             </ul>
+
         </div>
     </nav>
 
