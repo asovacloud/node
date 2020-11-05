@@ -40,7 +40,12 @@
             </ul>
             <ul id="nav-mobile-right" class="right hide-on-med-and-down">
                 <li class="<% if (path === '/login') { %>active<% } %>">
-                    <a href="/login">Login</a>
+                    <a class="btn green" href="/login">Login</a>
+                </li>
+                <li style="padding-right: .8rem;">
+                    <form action="/logout" method="POST">
+                        <button class="btn red" type="submit">Logout</button>
+                    </form>
                 </li>
             </ul>
         </div>
