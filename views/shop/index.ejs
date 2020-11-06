@@ -18,9 +18,12 @@
                         </div>
                         <div class="card-action overflow-hidden">
                             <div class="right">
-                                <div class="left card__button-holder">
-                                    <%- include('../includes/add-to-cart', {product: product}) %>
-                                </div>
+                                <a href="/products/<%= product._id %>" class="waves-effect waves-light btn blue darken-2 left">Details Shop</a>
+                                <% if (isAuthenticated) { %>
+                                    <div class="left card__button-holder">
+                                        <%- include('../includes/add-to-cart', {product: product}) %>
+                                    </div>
+                                    <% } %>
                             </div>
                         </div>
                     </div>
