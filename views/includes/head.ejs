@@ -44,7 +44,10 @@
                 <ul id="nav-mobile-right" class="right hide-on-med-and-down">
                     <% if (!isAuthenticated) { %>
                         <li class="<% if (path === '/login') { %>active<% } %>">
-                            <a class="btn green" href="/login">Login</a>
+                            <a href="/login">Login</a>
+                        </li>
+                        <li class="<% if (path === '/signup') { %>active<% } %> ">
+                            <a href="/signup">Signup</a>
                         </li>
                         <% } else { %>
                             <li style="padding-right: .8rem;">
