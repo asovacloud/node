@@ -15,6 +15,7 @@
                 <label class="active" for="confirmPassword">Confirm Password</label>
             </div>
             <div class="col s12">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <button type="submit" class="waves-effect waves-light btn red">Signup</button>
             </div>
         </div>
