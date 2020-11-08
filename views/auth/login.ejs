@@ -2,19 +2,24 @@
 
     <form action="/login" method="POST" class="form-center">
         <div class="row">
-            <div class="input-field col s12">
-                <input placeholder="E-Mail..." name="email" id="email" type="email">
-                <label class="active" for="email">E-Main</label>
-            </div>
-            <div class="input-field col s12">
-                <input placeholder="Password..." name="password" id="password" type="password">
-                <label class="active" for="password">Password</label>
-            </div>
+            <% if (errorMessage) { %>
+                <div class="red-text col s12">
+                    <%= errorMessage %>
+                </div>
+                <% } %>
+                    <div class="input-field col s12">
+                        <input placeholder="E-Mail..." name="email" id="email" type="email">
+                        <label class="active" for="email">E-Main</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Password..." name="password" id="password" type="password">
+                        <label class="active" for="password">Password</label>
+                    </div>
 
-            <div class="col s12">
-                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <button type="submit" class="waves-effect waves-light btn red">Login</button>
-            </div>
+                    <div class="col s12">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button type="submit" class="waves-effect waves-light btn red">Login</button>
+                    </div>
         </div>
     </form>
 
