@@ -3,8 +3,10 @@
     <form action="/login" method="POST" class="form-center">
         <div class="row">
             <% if (errorMessage) { %>
-                <div class="red-text col s12">
-                    <%= errorMessage %>
+                <div class="input-field col s12">
+                    <div class="card-panel red lighten-2">
+                        <span class="white-text"><%= errorMessage %></span>
+                    </div>
                 </div>
                 <% } %>
                     <div class="input-field col s12">
