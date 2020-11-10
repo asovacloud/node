@@ -1,6 +1,6 @@
 <%- include('../includes/head.ejs')  %>
 
-    <form action="/login" method="POST" class="form-center">
+    <form action="/reset" method="POST" class="form-center">
         <div class="row">
             <% if (errorMessage) { %>
                 <div class="input-field col s12">
@@ -13,18 +13,9 @@
                         <input placeholder="E-Mail..." name="email" id="email" type="email">
                         <label class="active" for="email">E-Main</label>
                     </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Password..." name="password" id="password" type="password">
-                        <label class="active" for="password">Password</label>
-                    </div>
-
-                    <div class="input-field col s12">
+                    <div class="col s12">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                        <button type="submit" class="waves-effect waves-light btn red">Login</button>
-                    </div>
-
-                    <div class="input-field col s12 centered">
-                        <a href="/reset">Reset Password</a>
+                        <button type="submit" class="waves-effect waves-light btn red">Reset Password</button>
                     </div>
         </div>
     </form>
