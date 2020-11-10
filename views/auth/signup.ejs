@@ -1,6 +1,6 @@
 <%- include('../includes/head.ejs')  %>
 
-    <form action="/signup" method="POST" class="form-center">
+    <form action="/signup" method="POST" class="form-center" novalidate>
         <div class="row">
             <% if (errorMessage) { %>
                 <div class="input-field col s12">
