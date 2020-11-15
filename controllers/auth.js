@@ -45,13 +45,23 @@ exports.getSignup = (req, res, next) => {
 exports.postLogin = (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.render('auth/login', {
+            path: '/login',
+            pageTitle: 'Login',
+            errorMessage: errors.array()[0].msg
+        });
+    }
+
     User.findOne({ email })
         .then(user => {
             if (!user) {
                 req.flash('error', 'Invalid email or password.');
                 return res.redirect('/login');
             }
-            bcrypt.compare(password, user.password)
+            bcrypt
+                .compare(password, user.password)
                 .then(doMatch => {
                     if (doMatch) {
                         req.session.isLoggedIn = true;
@@ -86,27 +96,27 @@ exports.postSignup = (req, res, next) => {
         });
     }
     bcrypt
-            .hash(password, 12)
-                .then(password => {
-                    const user = new User({
-                        email,
-                        password,
-                        cart: { items: [] }
-                    });
-                    return user.save();
-                })
-                .then(result => {
-                    res.redirect('/login');
-                    return transporter.sendMail({
-                        to: email,
-                        from: 'asovacloud@gmail.com',
-                        subject: 'Signup succeeded!',
-                        html: '<h1>You successfully signed up!</h1>'
-                    });
-                })
-                .catch(err => {
-                    console.log(err);
+        .hash(password, 12)
+            .then(password => {
+                const user = new User({
+                    email,
+                    password,
+                    cart: { items: [] }
                 });
+                return user.save();
+            })
+            .then(result => {
+                res.redirect('/login');
+                return transporter.sendMail({
+                    to: email,
+                    from: 'asovacloud@gmail.com',
+                    subject: 'Signup succeeded!',
+                    html: '<h1>You successfully signed up!</h1>'
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            });
 };
 
 exports.postLogout = (req, res, next) => {
