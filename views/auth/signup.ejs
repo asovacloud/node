@@ -10,15 +10,15 @@
                 </div>
                 <% } %>
                     <div class="input-field col s12">
-                        <input placeholder="E-Mail..." name="email" id="email" type="email">
+                        <input placeholder="E-Mail..." name="email" id="email" type="email" value="<%= oldInput.email %>">
                         <label class="active" for="email">E-Main</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Password..." name="password" id="password" type="password">
+                        <input placeholder="Password..." name="password" id="password" type="password" value="<%= oldInput.password %>">
                         <label class="active" for="password">Password</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Confirm Password..." name="confirmPassword" id="confirmPassword" type="password">
+                        <input placeholder="Confirm Password..." name="confirmPassword" id="confirmPassword" type="password" value="<%= oldInput.confirmPassword %>">
                         <label class="active" for="confirmPassword">Confirm Password</label>
                     </div>
                     <div class="col s12">
