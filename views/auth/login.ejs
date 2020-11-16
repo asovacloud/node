@@ -10,11 +10,23 @@
                 </div>
                 <% } %>
                     <div class="input-field col s12">
-                        <input placeholder="E-Mail..." name="email" id="email" type="email">
+                        <input
+                            class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %> "
+                            placeholder="E-Mail..."
+                            name="email"
+                            id="email"
+                            type="email"
+                            value="<%= oldInput.email %> ">
                         <label class="active" for="email">E-Main</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Password..." name="password" id="password" type="password">
+                        <input
+                            class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %> "
+                            placeholder="Password..."
+                            name="password"
+                            id="password"
+                            type="password"
+                            value="<%= oldInput.password %> ">
                         <label class="active" for="password">Password</label>
                     </div>
 
