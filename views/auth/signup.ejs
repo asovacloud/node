@@ -10,15 +10,32 @@
                 </div>
                 <% } %>
                     <div class="input-field col s12">
-                        <input placeholder="E-Mail..." name="email" id="email" type="email" value="<%= oldInput.email %>">
+                        <input
+                            class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %> "
+                            placeholder="E-Mail..."
+                            name="email"
+                            id="email"
+                            type="email"
+                            value="<%= oldInput.email %>">
                         <label class="active" for="email">E-Main</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Password..." name="password" id="password" type="password" value="<%= oldInput.password %>">
+                        <input
+                            class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %> "
+                            placeholder="Password..."
+                            name="password"
+                            id="password"
+                            type="password"
+                            value="<%= oldInput.password %>">
                         <label class="active" for="password">Password</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Confirm Password..." name="confirmPassword" id="confirmPassword" type="password" value="<%= oldInput.confirmPassword %>">
+                        <input
+                            class="<%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %> "
+                            placeholder="Confirm Password..."
+                            name="confirmPassword"
+                            id="confirmPassword"
+                            type="password" value="<%= oldInput.confirmPassword %>">
                         <label class="active" for="confirmPassword">Confirm Password</label>
                     </div>
                     <div class="col s12">
